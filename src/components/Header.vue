@@ -39,6 +39,7 @@ a:hover {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border-bottom: 1px solid #E1E1E1;
 }
 .header__search{
   max-width: 416px;

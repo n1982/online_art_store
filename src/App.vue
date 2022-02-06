@@ -36,6 +36,8 @@ export default {
 
 .app {
   max-width: 1920px;
+  padding: 10px;
+  height: 100vh;
   margin: auto;
   display: grid;
   grid-template-areas:
@@ -44,7 +46,7 @@ export default {
     "footer";
   grid-template-rows: 97px 1fr 97px;
   grid-template-columns: 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 
@@ -74,13 +76,13 @@ h4 {
 
 h5 {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 21px;
 }
 
 h6 {
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 21px;
 }
 
