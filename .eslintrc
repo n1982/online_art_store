@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "eslint-config-prettier",
+    "plugin:vue/vue3-recommended",
+    "prettier"
+  ],
+  "plugins": [
+  ],
+  "parser": "vue-eslint-parser",
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "rules": {},
+  "settings": {
+  }
+}

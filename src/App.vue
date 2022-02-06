@@ -1,5 +1,6 @@
 <template>
-<div class="main">Шаблон подключен!!!</div>
+  <div class = "main">Шаблон подключен!!!</div>
+  <div></div>
 </template>
 
 <script>
@@ -10,7 +11,7 @@ export default {
 </script>
 
 <style>
-.main{
+.main {
   color: chartreuse;
 }
 
