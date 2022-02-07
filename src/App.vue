@@ -1,14 +1,24 @@
 <template>
   <div class = "app-wrapper">
     <div class = "app">
+
       <Header />
-      <Main :paintings="paintings" />
+
+      <Main >
+        <CardList >
+          <Card  :paintings="paintings" @showFullCard="showFullCard"/>
+        </CardList>
+      </Main>
       <Footer />
+      <PopUpWindow v-model:showPopUp="showPopUp">
+        <CardFull :painting= 'paintings[cardId]' />
+      </PopUpWindow>
     </div>
   </div>
 </template>
 
 <script>
+
 
 export default {
   name: 'app',
@@ -70,7 +80,17 @@ export default {
           prevPrice: null,
           price: null
         },
-      ]
+      ],
+      showPopUp:false,
+      cardId:0
+    }
+  },
+  methods:{
+    showFullCard(id){
+      console.log("Событие перехвачено")
+      console.log("data", id)
+      this.showPopUp = true
+      this.cardId = id
     }
   }
 }

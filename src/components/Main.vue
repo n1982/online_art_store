@@ -1,9 +1,7 @@
 <template>
   <div class = "main">
     <h1 class="main__title">Картины эпохи Возрождения</h1>
-    <CardList>
-       <Card  :paintings="paintings"/>
-    </CardList>
+    <slot></slot>
   </div>
 </template>
 

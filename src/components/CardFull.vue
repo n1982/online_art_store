@@ -1,10 +1,11 @@
 <template>
-  <div :key="painting.id" class = "card__wrapper" v-for="painting in paintings" >
+  <div :key="painting.id" class = "card__wrapper" >
     <div class = "card">
       <img class = "card__image" :src = painting.slides[0]
            alt = "«Рождение Венеры» Сандро Боттичелли">
       <div class = "card__info">
-        <h2 class="card__title" @click="showFullCard(painting.id)">{{painting.pictureTitle}}</h2>
+        <h2>{{painting.pictureTitle}}</h2>
+        <h4 class="card__description">{{painting.pictureDescription}}</h4>
         <div class = "card__sales-area">
           <h5 class = "card__prev-price">{{painting.prevPrice}}</h5>
           <h3 class = "card__price">{{painting.price}}</h3>
@@ -16,52 +17,44 @@
 </template>
 
 <script>
-
-
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: "Card",
+  name: "CardFull",
   props:{
-    paintings:{
-      type: Array
+    painting:{
+      type: Object
     }
-},
-methods:{
-  showFullCard(data){
-
-    this.$emit("showFullCard", data-1)
-
   }
-}
 }
 </script>
 
 <style scoped>
 .card__wrapper {
   width: 100%;
-  max-width: 280px;
-  height: 328px;
+  max-width: 560px;
+  /*height: 328px;*/
   background: inherit;
   margin: 0 auto;
   border: 1px solid #E1E1E1;
 }
 .card__image{
   width:100%;
-  max-height: 160px;
+  /*max-height: 320px;*/
   object-fit: cover;
 }
 .card__info{
   margin: 24px;
+  display: grid;
+  row-gap: 10px;
 }
-.card__title{
-  cursor: pointer;
+.card__description{
+  text-align: justify;
 }
 .card__sales-area{
   display: grid;
   grid-template-areas:
   "prev-price button"
   "price button";
-  margin-top: 22px;
+
   column-gap: 5px;
   grid-template-columns: 45% auto
 
@@ -78,5 +71,6 @@ methods:{
 }
 .card__btn{
   grid-area: button;
+  justify-self: end;
 }
 </style>

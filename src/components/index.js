@@ -4,5 +4,16 @@ import Footer from "./Footer";
 import MyButton from "./UI/MyButton";
 import Card from "./Card";
 import CardList from "./CardList";
+import PopUpWindow from "./UI/PopUpWindow";
+import CardFull from "./CardFull";
 
-export default [Header, Main, Footer, MyButton, CardList, Card];
+export default [
+  Header,
+  Main,
+  Footer,
+  MyButton,
+  CardList,
+  Card,
+  PopUpWindow,
+  CardFull,
+];
