@@ -58,9 +58,9 @@ export default {
           pictureDescription: 'Эта фреска была написана Микеланджело в 1511 году. Великий тосканский мастер получил заказ от Папы Юлия II несколькими годами ранее, в 1508 году, для  создания фрески свода Сикстинской капеллы в Риме.',
           slides:[
             "../asserts/img/card_3/slide_1.jpg",
-            "../asserts/img/card_3/slide_1.jpg",
-            "../asserts/img/card_3/slide_1.jpg",
-            "../asserts/img/card_3/slide_1.jpg",
+            "../asserts/img/card_3/slide_2.jpg",
+            "../asserts/img/card_3/slide_3.jpg",
+            "../asserts/img/card_3/slide_4.jpg",
 
           ],
           prevPrice: "6 000 000$",
@@ -110,7 +110,6 @@ body{
 }
 .app-wrapper {
   width: 100%;
-
   background-color: #F6F3F3;
 }
 

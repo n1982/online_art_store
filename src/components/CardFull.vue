@@ -42,13 +42,10 @@ export default {
     next(){
       console.log("next")
       console.log('visibleSlide', this.visibleSlide)
-      console.log("painting.slides",this.painting.slides.length)
       if (this.visibleSlide>= this.painting.slides.length-1){
-
         this.visibleSlide = 0
       }else{
-        console.log("next else")
-        this.visibleSlide +=1
+       this.visibleSlide +=1
       }
     },
     prev(){
@@ -67,7 +64,6 @@ export default {
 .card__wrapper {
   width: 100%;
   max-width: 560px;
-  /*height: 328px;*/
   background: inherit;
   margin: 0 auto;
   border: 1px solid #E1E1E1;
