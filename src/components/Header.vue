@@ -15,6 +15,7 @@
 <script>
 import MyButton from "./UI/MyButton";
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "Header",
   components: {MyButton},
 }

@@ -6,9 +6,11 @@
     <a href = "#"><h5>Оплата</h5></a>
     <a href = "#"><h5>Контакты</h5></a>
     <a href = "#"><h5>О компании</h5></a>
-    <div class = "header__search">
-      <input type="text" placeholder="поиск по названию картины">
-      <my-button class = "btn">Найти!</my-button>
+    <div class = "footer__contacts">
+      <img src="../asserts/icon/phone.svg" alt="icon">
+      <h5>+7 (812) 555-55-55</h5>
+      <img src="../asserts/icon/coordinate_point.svg" alt="icon">
+      <h5>г. Санкт-Петербург, ул. Ефимова, 3</h5>
     </div>
 </div>
 </template>
@@ -41,11 +43,11 @@ a:hover {
   color: black;
 }
 
-.header__search{
-  max-width: 416px;
+.footer__contacts{
+  max-width: 481px;
   display: flex;
   flex-grow: 1;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 input
 {

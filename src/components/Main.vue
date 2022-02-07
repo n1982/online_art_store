@@ -1,6 +1,6 @@
 <template>
   <div class = "main">
-    <h1>Картины эпохи Возрождения</h1>
+    <h1 class="main__title">Картины эпохи Возрождения</h1>
     <CardList>
        <Card  :paintings="paintings"/>
     </CardList>
@@ -30,4 +30,7 @@ export default {
   margin: 0 auto;
   grid-area: main
 }
+ .main__title{
+   margin: 45px 0;
+ }
 </style>
