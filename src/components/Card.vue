@@ -1,13 +1,13 @@
 <template>
-  <div class = "card__wrapper">
+  <div :key="painting.id" class = "card__wrapper" v-for="painting in paintings">
     <div class = "card">
-      <img class = "card__image" src = "../asserts/img/card1/painting-6318612801.png"
+      <img class = "card__image" :src = painting.slides[0]
            alt = "«Рождение Венеры» Сандро Боттичелли">
       <div class = "card__info">
-        <h2>«Рождение Венеры» Сандро Боттичелли</h2>
+        <h2>{{painting.pictureTitle}}</h2>
         <div class = "card__sales-area">
-          <h5 class = "card__prev-price">2 000 000 $</h5>
-          <h3 class = "card__price">5 000 000 $</h3>
+          <h5 class = "card__prev-price">{{painting.prevPrice}}</h5>
+          <h3 class = "card__price">{{painting.price}}</h3>
           <my-button class="card__btn">Купить</my-button>
         </div>
       </div>
@@ -17,9 +17,15 @@
 
 <script>
 
-export default {
-  name: "Card",
 
+export default {
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: "Card",
+props:{
+    paintings:{
+      type: Array
+    }
+}
 }
 </script>
 
@@ -31,6 +37,11 @@ export default {
   background: inherit;
   margin: 0 auto;
   border: 1px solid #E1E1E1;
+}
+.card__image{
+  width:100%;
+  max-height: 160px;
+  object-fit: cover;
 }
 .card__info{
   margin: 24px;

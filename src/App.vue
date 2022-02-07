@@ -1,21 +1,78 @@
 <template>
-  <div class="app-wrapper">
-  <div class = "app">
-    <Header />
-    <Main/>
-    <Footer/>
-  </div>
+  <div class = "app-wrapper">
+    <div class = "app">
+      <Header />
+      <Main :paintings="paintings" />
+      <Footer />
+    </div>
   </div>
 </template>
 
 <script>
 
-
-import Main from "./components/Main";
-import Footer from "./components/Footer";
 export default {
   name: 'app',
-  components: {Footer, Main},
+  data() {
+    return {
+      paintings: [
+        {
+          id: 1,
+          pictureTitle: '«Рождение Венеры» Сандро Боттичелли',
+          pictureDescription: 'Картина итальянского художника тосканской школы Сандро Боттичелли. Представляет собой живопись темперой на холсте размером 172,5 × 278,5 см. В настоящее время хранится в галерее Уффици, Флоренция.',
+          slides:[
+            "../asserts/img/card_1/slide_1.jpg",
+            "../asserts/img/card_1/slide_2.jpg",
+            "../asserts/img/card_1/slide_3.jpg",
+            "../asserts/img/card_1/slide_4.jpg",
+          ],
+          prevPrice:"2 000 000$",
+          price:"1 000 000$"
+        },
+        {
+          id: 2,
+          pictureTitle: '«Тайная вечеря»  Леонардо да Винчи',
+          pictureDescription: 'Тайная вечеря Леонардо более известная под названием «Ченаколо», или «Последняя трапеза». Леонардо да Винчи трудился над ней с 1494 по 1498 год.',
+          slides:[
+            "../asserts/img/card_2/slide_1.jpg",
+            "../asserts/img/card_2/slide_2.jpg",
+            "../asserts/img/card_2/slide_3.jpg",
+            "../asserts/img/card_2/slide_4.jpg",
+
+          ],
+          prevPrice: null,
+          price:"3 000 000$"
+        },
+        {
+          id: 3,
+          pictureTitle: '«Сотворение Адама» Микеланджело',
+          pictureDescription: 'Эта фреска была написана Микеланджело в 1511 году. Великий тосканский мастер получил заказ от Папы Юлия II несколькими годами ранее, в 1508 году, для  создания фрески свода Сикстинской капеллы в Риме.',
+          slides:[
+            "../asserts/img/card_3/slide_1.jpg",
+            "../asserts/img/card_3/slide_1.jpg",
+            "../asserts/img/card_3/slide_1.jpg",
+            "../asserts/img/card_3/slide_1.jpg",
+
+          ],
+          prevPrice: "6 000 000$",
+          price:"5 000 000$"
+        },
+        {
+          id: 4,
+          pictureTitle: '«Урок анатомии»  Рембрандт',
+          pictureDescription: '«Урок анатомии доктора Тульпа» – один из самых узнаваемых образов в истории живописи, созданный 25-летним Рембрандтом после переезда из родного Лейдена в Амстердам.',
+          slides:[
+            "../asserts/img/card_4/slide_1.jpg",
+            "../asserts/img/card_4/slide_2.jpg",
+            "../asserts/img/card_4/slide_3.jpg",
+            "../asserts/img/card_4/slide_4.jpg",
+
+          ],
+          prevPrice: null,
+          price: null
+        },
+      ]
+    }
+  }
 }
 
 </script>
@@ -28,16 +85,19 @@ export default {
   font-family: 'Merriweather', serif;
   font-style: normal;
 }
-.app-wrapper{
+body{
+  height: 100%;
+}
+.app-wrapper {
   width: 100%;
-  height: 100vh;
+
   background-color: #F6F3F3;
 }
 
 .app {
   max-width: 1920px;
   padding: 10px;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
   display: grid;
   grid-template-areas:

@@ -3,5 +3,6 @@ import Main from "./Main";
 import Footer from "./Footer";
 import MyButton from "./UI/MyButton";
 import Card from "./Card";
+import CardList from "./CardList";
 
-export default [Header, Main, Footer, MyButton, Card];
+export default [Header, Main, Footer, MyButton, CardList, Card];
