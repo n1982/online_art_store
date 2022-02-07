@@ -6,6 +6,7 @@ import Card from "./Card";
 import CardList from "./CardList";
 import PopUpWindow from "./UI/PopUpWindow";
 import CardFull from "./CardFull";
+import SlideShow from "./UI/SlideShow";
 
 export default [
   Header,
@@ -16,4 +17,5 @@ export default [
   Card,
   PopUpWindow,
   CardFull,
+  SlideShow,
 ];
