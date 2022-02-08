@@ -1,14 +1,22 @@
 <template>
   <div class = "app-wrapper">
     <div class = "app">
-      <Header />
-      <Main :paintings="paintings" />
+      <Header @searchPainting="searchPainting" />
+      <Main >
+        <CardList >
+          <Card v-for="painting in sortedPaintings"  :key="painting.id" :painting="painting" @showFullCard="showFullCard"/>
+        </CardList>
+      </Main>
       <Footer />
+      <PopUpWindow v-model:showPopUp="showPopUp">
+        <CardFull :painting= 'paintings[cardId]' />
+      </PopUpWindow>
     </div>
   </div>
 </template>
 
 <script>
+
 
 export default {
   name: 'app',
@@ -48,9 +56,9 @@ export default {
           pictureDescription: 'Эта фреска была написана Микеланджело в 1511 году. Великий тосканский мастер получил заказ от Папы Юлия II несколькими годами ранее, в 1508 году, для  создания фрески свода Сикстинской капеллы в Риме.',
           slides:[
             "../asserts/img/card_3/slide_1.jpg",
-            "../asserts/img/card_3/slide_1.jpg",
-            "../asserts/img/card_3/slide_1.jpg",
-            "../asserts/img/card_3/slide_1.jpg",
+            "../asserts/img/card_3/slide_2.jpg",
+            "../asserts/img/card_3/slide_3.jpg",
+            "../asserts/img/card_3/slide_4.jpg",
 
           ],
           prevPrice: "6 000 000$",
@@ -70,8 +78,28 @@ export default {
           prevPrice: null,
           price: null
         },
-      ]
+      ],
+      showPopUp:false,
+      cardId:0,
+      searchQuery:''
     }
+  },
+  methods:{
+    showFullCard(id){
+      console.log("Событие перехвачено")
+      console.log("data", id)
+      this.showPopUp = true
+      this.cardId = id
+    },
+    searchPainting(data){
+      this.searchQuery = data
+    }
+  },
+  computed:{
+    sortedPaintings(){
+      return this.paintings.filter(painting => painting.pictureTitle.toLowerCase().includes(this.searchQuery.toLowerCase()))
+    }
+
   }
 }
 
@@ -90,7 +118,6 @@ body{
 }
 .app-wrapper {
   width: 100%;
-
   background-color: #F6F3F3;
 }
 
