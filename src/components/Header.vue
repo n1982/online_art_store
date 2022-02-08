@@ -6,18 +6,27 @@
     <a href = "#"><h5>Контакты</h5></a>
     <a href = "#"><h5>О компании</h5></a>
     <div class = "header__search">
-      <input type="text" placeholder="поиск по названию картины">
-      <my-button class = "btn">Найти!</my-button>
+      <input v-model.trim="searchQuery" type="text" placeholder="поиск по названию картины">
+      <my-button  @click="searchPainting" class = "btn">Найти!</my-button>
     </div>
   </div>
 </template>
 
 <script>
-import MyButton from "./UI/MyButton";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Header",
-  components: {MyButton},
+ data(){
+    return{
+      searchQuery:''
+    }
+ },
+ methods:{
+   searchPainting(){
+     this.$emit('searchPainting', this.searchQuery)
+   }
+ }
 }
 </script>
 
@@ -28,7 +37,12 @@ a:hover {
   text-decoration: none;
   color: black;
 }
+@media (max-width: 630px){
+  h5 {
+    font-size: 10px;
+  }
 
+}
 .header {
   max-width: 1216px;
   width: 100%;

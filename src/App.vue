@@ -1,12 +1,10 @@
 <template>
   <div class = "app-wrapper">
     <div class = "app">
-
-      <Header />
-
+      <Header @searchPainting="searchPainting" />
       <Main >
         <CardList >
-          <Card  :paintings="paintings" @showFullCard="showFullCard"/>
+          <Card v-for="painting in sortedPaintings"  :key="painting.id" :painting="painting" @showFullCard="showFullCard"/>
         </CardList>
       </Main>
       <Footer />
@@ -82,7 +80,8 @@ export default {
         },
       ],
       showPopUp:false,
-      cardId:0
+      cardId:0,
+      searchQuery:''
     }
   },
   methods:{
@@ -91,7 +90,16 @@ export default {
       console.log("data", id)
       this.showPopUp = true
       this.cardId = id
+    },
+    searchPainting(data){
+      this.searchQuery = data
     }
+  },
+  computed:{
+    sortedPaintings(){
+      return this.paintings.filter(painting => painting.pictureTitle.toLowerCase().includes(this.searchQuery.toLowerCase()))
+    }
+
   }
 }
 
