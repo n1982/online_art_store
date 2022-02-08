@@ -10,8 +10,6 @@
   "env": {
     "browser": true,
     "jest": true
-  },
-  "rules": {},
-  "settings": {
   }
+
 }

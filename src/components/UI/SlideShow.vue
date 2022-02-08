@@ -24,7 +24,6 @@ export default {
     },
     prev() {
       this.$emit("prev")
-
     },
   }
 }

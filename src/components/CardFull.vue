@@ -6,8 +6,8 @@
           :key = "slide"
           :index = "index"
           :visibleSlide = 'visibleSlide'
-      @next="next"
-      @prev="prev">
+          @next = "next"
+          @prev = "prev">
         <img class = "card__image" :src = "slide" alt = "«Рождение Венеры» Сандро Боттичелли">
       </SlideShow>
 
@@ -38,22 +38,22 @@ export default {
       type: Object
     }
   },
-  methods:{
-    next(){
+  methods: {
+    next() {
       console.log("next")
       console.log('visibleSlide', this.visibleSlide)
-      if (this.visibleSlide>= this.painting.slides.length-1){
+      if (this.visibleSlide >= this.painting.slides.length - 1) {
         this.visibleSlide = 0
-      }else{
-       this.visibleSlide +=1
+      } else {
+        this.visibleSlide += 1
       }
     },
-    prev(){
+    prev() {
       console.log("prev")
-      if (this.visibleSlide <= 0){
-        this.visibleSlide = this.painting.slides.length-1
-      }else{
-        this.visibleSlide -=1
+      if (this.visibleSlide <= 0) {
+        this.visibleSlide = this.painting.slides.length - 1
+      } else {
+        this.visibleSlide -= 1
       }
     }
   }

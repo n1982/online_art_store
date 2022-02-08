@@ -1,5 +1,5 @@
 <template>
-  <button @click="handleClick" class = "btn">
+  <button @click = "handleClick" class = "btn">
     <slot></slot>
   </button>
 </template>
@@ -7,9 +7,9 @@
 <script>
 export default {
   name: "my-button",
-emits: ['btnClick'],
-  methods:{
-    handleClick(){
+  emits: ['btnClick'],
+  methods: {
+    handleClick() {
       this.$emit('btnClick')
     }
   }
@@ -27,8 +27,8 @@ emits: ['btnClick'],
   outline: none;
   cursor: pointer;
 }
-.btn:hover{
-  background: #776763;
 
+.btn:hover {
+  background: #776763;
 }
 </style>

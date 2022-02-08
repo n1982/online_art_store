@@ -1,17 +1,15 @@
 <template>
   <div class = "main">
-    <h1 class="main__title">Картины эпохи Возрождения</h1>
+    <h1 class = "main__title">Картины эпохи Возрождения</h1>
     <slot></slot>
   </div>
 </template>
 
 <script>
-
-
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Main",
-   props:{
+  props: {
     paintings: {
       type: Array,
       required: true,
@@ -28,7 +26,8 @@ export default {
   margin: 0 auto;
   grid-area: main
 }
- .main__title{
-   margin: 45px 0;
- }
+
+.main__title {
+  margin: 45px 0;
+}
 </style>
